@@ -1,0 +1,205 @@
+[
+  {
+    "code": "STA 301",
+    "name": "Engineering Statistics",
+    "credits": "1+1",
+    "theory": [
+      "Probability axioms & events",
+      "Addition, multiplication laws & Bayes",
+      "Random variables, PMF & PDF",
+      "Two-dimensional random variables",
+      "Mathematical expectation",
+      "Moment generating function",
+      "CLT, covariance, correlation, regression",
+      "Bernoulli & Binomial",
+      "Mid-semester exam",
+      "Poisson distribution",
+      "Normal distribution",
+      "Uniform & Gamma",
+      "Exponential distribution",
+      "Tests of significance",
+      "Large-sample tests",
+      "Small-sample t-tests",
+      "Paired t-test & ANOVA"
+    ],
+    "practical": [
+      "Simple probability problems",
+      "Bayes’ theorem",
+      "PMF & PDF problems",
+      "Joint PMF",
+      "Joint PDF",
+      "Expectation & variance",
+      "Correlation coefficient",
+      "Regression coefficient",
+      "Bernoulli & Binomial",
+      "Poisson problems",
+      "Normal problems",
+      "Exponential problems",
+      "Gamma problems",
+      "Large-sample tests",
+      "Small-sample & paired t-test",
+      "ANOVA problems",
+      "Final practical exam"
+    ],
+    "units": []
+  },
+  {
+    "code": "ARM 321",
+    "name": "Agribusiness Mgmt & Entrepreneurship",
+    "credits": "1+1",
+    "theory": null,
+    "practical": null,
+    "units": [
+      "Agribusiness management",
+      "Management functions",
+      "Functional area I",
+      "Functional area II",
+      "Entrepreneurship"
+    ]
+  },
+  {
+    "code": "ERG 301",
+    "name": "Heat Power Engineering",
+    "credits": "2+1",
+    "theory": null,
+    "practical": null,
+    "units": [
+      "Types & properties of fuels",
+      "IC engines",
+      "Performance of IC engines",
+      "Steam boilers",
+      "Cogeneration & CHP"
+    ]
+  },
+  {
+    "code": "ERG 302",
+    "name": "Thermo Chemical Conversion Tech.",
+    "credits": "2+1",
+    "theory": null,
+    "practical": null,
+    "units": [
+      "Thermochemical conversion",
+      "Combustion & furnaces",
+      "Pyrolysis",
+      "Gasification",
+      "Gas cleaning & instrumentation"
+    ]
+  },
+  {
+    "code": "ERG 303",
+    "name": "Solar Energy Engineering",
+    "credits": "2+1",
+    "theory": [
+      "Solar energy in India & basics of sun and earth",
+      "Solar spectrum, constant & radiation",
+      "Instruments for solar radiation",
+      "Solar terms & earth–sun angles",
+      "Solar time & day length",
+      "Solar thermal collectors",
+      "Flat plate collector",
+      "Selective surfaces",
+      "Solar cooker",
+      "Solar water heaters",
+      "Solar air heaters & dryers",
+      "Solar dryer performance",
+      "Solar still & solar pond",
+      "Concentrating collectors",
+      "Central receiver & heliostats",
+      "Tracking methods",
+      "Mid-semester exam",
+      "PV cell physics",
+      "Solar cell I–V & P–V curves",
+      "Cell losses & quantum efficiency",
+      "Silicon & thin-film technology",
+      "Types of solar cells",
+      "Thin film technology",
+      "Concentrating PV cells",
+      "Balance of systems",
+      "Batteries in PV systems",
+      "Series & parallel connections",
+      "SPV applications",
+      "Solar refrigeration",
+      "SPV water pumping",
+      "IGBC & BIPV",
+      "Types of solar PV systems",
+      "PV plant sizing & costing",
+      "1 MW plant case study"
+    ],
+    "practical": [
+      "Solar radiation measurement",
+      "Earth–sun angles",
+      "Solar time & sun path",
+      "Solar cooker performance",
+      "Solar water heater efficiency",
+      "Flat plate collector (forced mode)",
+      "Solar dryer performance",
+      "Solar still performance",
+      "Parabolic trough concentrator",
+      "I–V characteristics of PV cell",
+      "Series & parallel modules",
+      "Solar refrigeration test",
+      "PV water pumping test",
+      "Grid-synchronised PV inverter",
+      "Design of standalone & grid PV plant",
+      "Visit to solar plant / industry",
+      "Final practical exam"
+    ],
+    "units": []
+  },
+  {
+    "code": "ERG 304",
+    "name": "Biochemical Conversion Tech.",
+    "credits": "2+1",
+    "theory": null,
+    "practical": null,
+    "units": [
+      "Biomass & anaerobic fermentation",
+      "Biogas plants",
+      "Biogas feedstocks & utilization",
+      "Energy from wastewater & landfill",
+      "Biofuels"
+    ]
+  },
+  {
+    "code": "SWE 311",
+    "name": "Water Pollution Control Engg.",
+    "credits": "2+1",
+    "theory": null,
+    "practical": null,
+    "units": [
+      "Water pollution",
+      "Water pollutants",
+      "Analysis of water pollutants",
+      "Pollutant dynamics in streams",
+      "Environmental hydrogeology"
+    ]
+  },
+  {
+    "code": "SWE 312",
+    "name": "Hydrology & Water Resources",
+    "credits": "2+1",
+    "theory": null,
+    "practical": null,
+    "units": [
+      "Hydrology & hydrologic cycle",
+      "Water losses",
+      "Hydrograph",
+      "Flood routing",
+      "Groundwater hydrology"
+    ]
+  },
+  {
+    "code": "SWE 313",
+    "name": "Public Health Engineering",
+    "credits": "2+1",
+    "theory": null,
+    "practical": null,
+    "units": [
+      "Quantity & sources of water",
+      "Water treatment",
+      "Conveyance & distribution",
+      "Sewage collection & disposal",
+      "Sewage treatment"
+    ]
+  }
+]

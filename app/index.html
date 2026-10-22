@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<title>LEARN</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=1.7.0">
+</head><body><div id="app"></div><div id="ts"></div>
+<script>
+// Recovery: unregister stale service workers and clear old caches, then reload once so every script
+// request comes straight from the current server files.
+(function(){
+  try {
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(function(regs){
+        return Promise.all(regs.map(function(reg){ return reg.unregister(); })).then(function(){ return regs.length; });
+      }).then(function(hadRegs){
+        if ('caches' in window) return caches.keys().then(function(keys){
+          return Promise.all(keys.filter(function(k){ return k.indexOf('learn-') === 0; }).map(function(k){ return caches.delete(k); })).then(function(){ return hadRegs; });
+        });
+        return hadRegs;
+      }).then(function(hadRegs){
+        if (hadRegs && !sessionStorage.getItem('learn-recovery-reloaded')) { sessionStorage.setItem('learn-recovery-reloaded','1'); location.reload(); }
+      }).catch(function(){});
+    }
+  } catch(e) {}
+})();
+// Keep startup failures visible instead of leaving a blank white screen.
+window.addEventListener("error", function (event) {
+  const root = document.getElementById("app");
+  if (!root || root.innerHTML.trim()) return;
+  root.innerHTML = '<main style="padding:24px;color:#1d1033;background:#fff;min-height:100%;font:15px system-ui"><h2 style="color:#c83d4d">LEARN could not load</h2><p style="margin:12px 0">A script failed before the app could start.</p><pre style="white-space:pre-wrap;overflow-wrap:anywhere;background:#f4f4f6;padding:12px;border-radius:10px"></pre><button onclick="location.reload()" style="margin-top:14px;padding:12px 18px;border:0;border-radius:10px;background:#2a0b4d;color:#fff;font-weight:700">Reload app</button></main>';
+  const pre = root.querySelector('pre'); if (pre) pre.textContent = (event.message || 'Unknown script error') + (event.filename ? '\n' + event.filename + ':' + event.lineno : '');
+});
+window.addEventListener("unhandledrejection", function (event) { console.error("LEARN promise error:", event.reason); });
+window.setTimeout(function(){
+  const root = document.getElementById('app');
+  if (root && !root.innerHTML.trim()) {
+    root.innerHTML = '<main style="padding:24px;color:#1d1033;background:#fff;min-height:100%;font:15px system-ui"><h2>LEARN did not start</h2><p style="margin:10px 0">The page loaded, but the app scripts did not render the login screen. Start the server from the extracted <b>learn</b> folder and press Ctrl+Shift+R.</p></main>';
+  }
+}, 1800);
+</script>
+<!-- Order matters only for app.js, which must load last (it starts the app). -->
+<script src="js/config.js?v=1.7.0"></script>
+<script src="js/syllabus.js?v=1.7.0"></script>
+<script src="js/brand.js?v=1.7.0"></script>
+<script src="js/state.js?v=1.7.0"></script>
+<script src="js/api.js?v=1.7.0"></script>
+<script src="js/auth.js?v=1.7.0"></script>
+<script src="js/home.js?v=1.7.0"></script>
+<script src="js/chat.js?v=1.7.0"></script>
+<script src="js/course.js?v=1.7.0"></script>
+<script src="js/map.js?v=1.7.0"></script>
+<script src="js/lesson-data.js?v=1.7.0"></script>
+<script src="js/lesson.js?v=1.7.0"></script>
+<script src="js/staff.js?v=1.7.0"></script>
+<script src="js/tabs.js?v=1.7.0"></script>
+<script src="js/app.js?v=1.7.0"></script>
+</body></html>

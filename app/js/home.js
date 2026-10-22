@@ -1,0 +1,11 @@
+// ===== home =====
+const isDone=t=>{const s=SUBJ.find(x=>x.c==t[0]);return pr(s)[t[1]=="T"?0:1]>t[2]};
+const tint={y:"var(--t-yellow)",l:"var(--t-purple)",m:"var(--t-green)",b:"var(--t-blue)"};
+function home(){const td=CFG.today,dn=td.filter(isDone).length;
+ const kp=[["star","Points",S.pts,tint.b,"var(--f-blue)"],["flame","Day streak",streakNow()+(streakNow()==1?" day":" days"),tint.y,"var(--f-yellow)"],["target","Today’s lectures",dn+"/5",tint.m,"var(--f-green)"],["trophy","League rank",S.leagueRank?"#"+S.leagueRank:"–",tint.l,"var(--f-purple)"]];
+ shell(`<div class="kp">${kp.map(k=>`<div class="tilecard kc"><i style="background:${k[3]};color:${k[4]}">${IC(k[0],19)}</i><div><small>${k[1]}</small><b>${k[2]}</b></div></div>`).join("")}</div>
+ <section class="card dc-card"><div class="row"><h3 class="sec">Daily challenge</h3><span class="pill">${dn}/5</span></div><div class="sm">Lectures taken today: 3 theory + 2 practical</div><div class="bar"><i style="width:${dn*20}%"></i></div>
+ ${td.map(t=>{const i=SUBJ.findIndex(x=>x.c==t[0]),s=SUBJ[i];return `<div class="tk" onclick="lvl(${i},'${t[1]}',${t[2]})"><span class="pill ${t[1]}">${t[1]=="T"?"Theory":"Practical"}</span><span>${t[0]} · ${esc(t[1]=="T"?tt(s,t[2]):pt(s,t[2]))}</span><b class="tk-s ${isDone(t)?"ok":""}">${IC(isDone(t)?"check":"chev",18,2.2)}</b></div>`}).join("")}</section>
+ <h3 class="sec">My courses</h3><div class="gr">${SUBJ.map((s,i)=>`<button class="ctile" onclick="openC(${i})">${bd(s,44)}<b>${s.c}</b><span class="cn">${esc(s.n)}</span><span class="bar"><i style="width:${pct(s)}%"></i></span><span class="sm">${pct(s)}% complete</span></button>`).join("")}</div>
+ <h3 class="sec">Quick actions</h3><div class="qa">${[["Daily challenge","Start now","target","var(--t-yellow)","document.querySelector('.dc-card').scrollIntoView({behavior:'smooth'})"],["Leaderboard","View rank","trophy","var(--t-purple)","go('league')"],["Arena","Play now","arena","var(--t-purple)","go('arena')"]].map(q=>`<button class="qcard" style="background:linear-gradient(180deg,${q[3]},var(--surface) 85%)" onclick="${q[4]}"><span class="qi">${IC(q[2],26)}</span><b>${q[0]}</b><span class="qgo">${q[1]} ${IC("chev",14,2.2)}</span></button>`).join("")}</div>`)}
+function openC(i){S.cs=i;ct="ov";go("course")}
